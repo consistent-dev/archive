@@ -4,6 +4,7 @@ import util.ExceptionUtil;
 import util.FileUtil;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -16,15 +17,15 @@ public class FileReaderTest {
                 file.createNewFile();
             }
 
-            try(java.io.FileReader fileReader = new java.io.FileReader(file);
+            try(FileReader fileReader = new FileReader(file);
                 FileWriter fileWriter = new FileWriter(file);){
 
-                fileWriter.write('C');
+                fileWriter.write('1');
                 fileWriter.write('R');
                 fileWriter.flush();
 
-                System.out.println(fileReader.read());
-                System.out.println(fileReader.read());
+                System.out.println((char)fileReader.read());
+                System.out.println((char)fileReader.read());
             } catch (IOException e) {
                 ExceptionUtil.ignore(e);
             }
