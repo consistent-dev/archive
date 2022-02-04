@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="runtime-configuration" />
         <module name="string-with-parameter" />
+        <module name="file-database" />
       </profile>
     </annotationProcessing>
   </component>
